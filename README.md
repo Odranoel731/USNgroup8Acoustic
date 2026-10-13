@@ -1,11 +1,13 @@
 ## USN Group 8
-###  Classifying Electric Engine Conditions through Acoustic Analysis
+####  Classifying Electric Engine Conditions through Acoustic Analysis
 
 # Model 1 - [insert method name here]
 
+### Script found in Jupyter Notebook file
+
 *Notes for writing report:
 
-- Renamed "train" and "test" directories to match a (roughly) 80:20 split. Probably misnamed by accident in original dataset.
+- Made mistake interpreting train/test dataset folders, luckily team corrected me.
 - SciPy to read WAV files.
 - Each dataset class had equal bitrates (44.1kHz), no. of audio samples (132 300), and bit depths, per file.
 - First look at data shows a probable need for data prep: scaling/normalization. But we try without first.
