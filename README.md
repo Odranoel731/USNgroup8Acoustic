@@ -15,3 +15,6 @@
     - Raw data/no features was terrible, as expected.
     - Tried histogram with variable bin counts (50). Decent results, ~70% success, on *just* good vs. bad binary classification.
     - Implementing full OvO next...
+    - Swapped train/test back. Much stronger results, ~100% accuracy.
+        Suspicious of overfitting; tested with 5-fold cross validation -> high mean, low variance -> strong results are real.
+    - OvO almost done (not usable atm)
