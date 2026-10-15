@@ -1,9 +1,8 @@
-## USN Group 8
-####  Classifying Electric Engine Conditions through Acoustic Analysis
-
 # Model 1 - [insert method name here]
 
-### Script found in Jupyter Notebook file
+
+### Main script in "model_notes.ipynb"
+
 
 *Notes for writing report:
 
