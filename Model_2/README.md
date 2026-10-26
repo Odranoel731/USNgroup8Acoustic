@@ -46,6 +46,12 @@ Det skal være 357 filer i `train_cut` og 2 021 i `test_cut`.
 python preprocess.py
 ```
 
+**6. Tren modellen**
+Kjør ```train_model.py```
+
+Den skriver ut tapet for hver epoke mens den kjører. Etter treningen skriver det ut nøyaktighet per støyforhold, 
+en klassifiseringsrapport og en confusion matrix. Den beste modellen lagres i engine_cnn.pth.
+
 ## Det du får i `features/`
 
 | Fil | Form | Innhold |
