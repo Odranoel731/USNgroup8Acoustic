@@ -58,7 +58,7 @@ python preprocess.py
 
 Klippene er sortert per klasse og etter klippnummer. Dette er input til CNN-modellen.
 
-## Slik fungerer train_model.py
+## Slik fungerer cnn_final.py
 **Reproduserbarhet**
 Seed settes for `random`, NumPy og PyTorch, og GPU-operasjonene gjøres deterministiske. 
 To kjøringer gir dermed samme resultat, så endringer i modellen kan sammenlignes rettferdig.
