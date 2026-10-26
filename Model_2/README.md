@@ -14,7 +14,7 @@ Model_2/
 ├── oversikt.py                     ← sjekker at datasettet ligger riktig
 ├── utforsk.py                      ← plotter eksempler fra hver klasse
 ├── preprocess.py                   ← lager spektrogrammene
-├── cnn_final.py                    ← trener og tester CNN-modellen  
+├── train_model.py                    ← trener og tester CNN-modellen  
 ├── requirements.txt
 ├── engine_cnn.pth                  ← beste modell, lages av final_cnn.py (ikke i git)
 └── README.md
