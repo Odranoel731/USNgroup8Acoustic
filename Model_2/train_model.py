@@ -6,6 +6,7 @@ import random
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.metrics import classification_report, confusion_matrix
 from collections import defaultdict
+import matplotlib.pyplot as plt
 
 
 
@@ -110,6 +111,8 @@ model = EngineCNN().to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, weight_decay=1e-4)
 
+train_losses = []
+val_losses = []
 best_val_loss = float("inf")
 patience_counter = 0
 
@@ -128,6 +131,7 @@ for epoch in range(MAX_EPOCHS):
         train_loss += loss.item() * len(yb)
 
     train_loss /= len(train_loader.dataset)
+    train_losses.append(train_loss)
 
     model.eval()
     val_loss = 0.0
@@ -139,6 +143,7 @@ for epoch in range(MAX_EPOCHS):
             val_loss += loss.item() * len(yb)
 
     val_loss /= len(val_loader.dataset)
+    val_losses.append(val_loss)
 
     print(
         f"Epoch {epoch + 1:02d} | "
@@ -161,6 +166,23 @@ for epoch in range(MAX_EPOCHS):
             break
 
 checkpoint = torch.load(PROJECT / "engine_cnn.pth")
+
+epochs = range(1, len(train_losses) + 1)
+
+plt.figure(figsize=(8, 4))
+plt.plot(epochs, train_losses, label="Train loss")
+plt.plot(epochs, val_losses, label="Validation loss")
+plt.xlabel("Epoch")
+plt.ylabel("Loss")
+plt.title("Training and validation loss")
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.yscale("log")
+plt.tight_layout()
+plt.savefig(PROJECT / "training_curves.png", dpi=200)
+plt.show()
+
+
 model.load_state_dict(checkpoint["state_dict"])
 model.eval()
 
