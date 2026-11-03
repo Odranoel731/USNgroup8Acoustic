@@ -39,4 +39,12 @@ Jupyter notebook intended as sandbox to create and test models:
 - Discrete Fourier Transform complete. Decent results with taking the histogram of the magnitude of the DFT (with increase bin size from 50 to 200). Validation accuracy ~70%. PS. All validation runs against test_cut are final, before the core features are modified, to prevent overfitting with tuning parameters.
 
 - Moving on to a ranking of strongest frequencies. Thought process: Histogram of DFT still uses the frequency *amplitudes* as the feature. Increasing binN 50->200 gave accuracy increase from 50%->70%, thus we take the limit and look at the most prominent frequencies directly? Last-sec note: bin size from 200->1000 indeed gave *validation* accuracy of 88%, lending credibility to this idea.
+
+- Added confusion matrices for evaluation of model iterations.
+
+- Ranking/sorted frequencies gave bad results -> 50%.
+
+- Tried other features; spectral centroid, differences of amplitudes, etc. Nothing stuck.
+
+- From the confusion matrix, we see that the histogram DFT struggles a bit with 
         
