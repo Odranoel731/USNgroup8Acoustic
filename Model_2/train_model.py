@@ -19,7 +19,7 @@ PATIENCE = 7
 MIN_IMPROVEMENT = 1e-4
 
 
-SEED = 42
+SEED = 2
 random.seed(SEED)
 np.random.seed(SEED)
 torch.manual_seed(SEED)
@@ -179,7 +179,7 @@ plt.legend()
 plt.grid(True, alpha=0.3)
 plt.yscale("log")
 plt.tight_layout()
-plt.savefig(PROJECT / "training_curves.png", dpi=200)
+plt.savefig(PROJECT / f"training_curves_seed_{SEED}.png", dpi=200)
 plt.show()
 
 
